@@ -1,63 +1,56 @@
-.card {
-  padding: 1rem;
+:root {
+  background: #f6faff;
 
-  .content > * + * {
-    margin-top: 0.25rlh;
-  }
+  --color-icon: #0b3a67;
+
+  --image-width: 8rem;
+  --card-padding: 1rem;
+
+  --font-heading: 1.75rem;
+
+  /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
+  --hide-overlay: 1;
 }
 
-@layer reset, cards;
+/* Begynd her... */
 
-@layer cards {
-  .cards {
-    list-style: none;
-    padding: 0;
-    max-inline-size: 60ch;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .card {
-    background: #fff;
-    border-radius: 6px;
-    box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-    overflow: clip;
-  }
-
-  h3 {
-    color: #0f172a;
-    line-height: 1.3;
-  }
-
-  p {
-    color: #334155;
-  }
-}
-
-@layer reset {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-  }
+section {
+  padding: var(--card-padding);
+  display: flex;
+  gap: 1rem;
 
   img {
-    inline-size: 100%;
-    block-size: auto;
-    display: block;
+    width: var(--image-width);
+    border-radius: 5rem;
   }
 
-  html {
-    font-family: system-ui;
-    background: #cfd8e4;
-    line-height: 1.5;
-  }
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-  body {
-    display: grid;
-    place-content: center;
-    block-size: 100svh;
+    h1 {
+      font-size: var(--font-heading);
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
+      color: rgb(0, 154, 136);
+    }
+
+    #icons {
+      margin-top: 0.7rem;
+      display: flex;
+      gap: 2rem;
+
+      svg {
+        height: 2rem;
+        width: 2rem;
+        color: var(--color-icon);
+      }
+    }
   }
 }
