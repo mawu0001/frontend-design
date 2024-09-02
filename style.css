@@ -1,19 +1,8 @@
 /* Dine styles her */
-article {
-  --flow-space: 0.5rlh;
+.card {
+  padding: 1rem;
 
-  > * + * {
-    margin-block-start: var(--flow-space);
-  }
-
-  h2 {
-    --flow-space: 2rlh;
-  }
-  h3 {
-    --flow-space: 1rlh;
-  }
-
-  h3 + * {
-    --flow-space: 0.25rlh;
+  .content > * + * {
+    margin-top: 0.25rlh;
   }
 }
