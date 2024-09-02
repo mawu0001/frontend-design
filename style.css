@@ -1,82 +1,19 @@
-.card {
-  padding: 1rem;
+/* Dine styles her */
+article {
+  --flow-space: 0.5rlh;
 
-  /* Kort uden både et billede og en overskrift skal have en justeret font-størrelse og linjehøjde for paragraf tekst. */
-  &:not(:has(img, h3)) {
-    font-size: 1.25rem;
-    line-height: 1.4;
+  > * + * {
+    margin-block-start: var(--flow-space);
   }
 
-  /* Kort uden billeder skal have en forøget font-størrelse for overskrifter. */
-  &:not(:has(img)) h3 {
-    font-size: 1.6rem;
+  h2 {
+    --flow-space: 2rlh;
   }
-
-  /* Kort med billeder skal have nul padding, men deres indhold skal matche padding’en fra de øvrige kort. */
-  &:has(img) {
-    padding: 0;
-  }
-  .content {
-    padding: 1rem;
-  }
-
-  .content > * + * {
-    margin-top: 0.25rlh;
-  }
-}
-
-@layer reset, cards;
-
-@layer cards {
-  .cards {
-    list-style: none;
-    padding: 0;
-    max-inline-size: 60ch;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .card {
-    background: #fff;
-    border-radius: 6px;
-    box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-    overflow: clip;
-  }
-
   h3 {
-    color: #0f172a;
-    line-height: 1.3;
+    --flow-space: 1rlh;
   }
 
-  p {
-    color: #334155;
-  }
-}
-
-@layer reset {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-  }
-
-  img {
-    inline-size: 100%;
-    block-size: auto;
-    display: block;
-  }
-
-  html {
-    font-family: system-ui;
-    background: #cfd8e4;
-    line-height: 1.5;
-  }
-
-  body {
-    display: grid;
-    place-content: center;
-    block-size: 100svh;
+  h3 + * {
+    --flow-space: 0.25rlh;
   }
 }
